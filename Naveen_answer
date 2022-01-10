@@ -1,0 +1,55 @@
+#include <iostream>
+
+using namespace std;
+
+class Employee
+{
+    
+    int eid;
+    char emp_name[100];
+    float basic_salary, hra,da, i_tax,net_salary;
+    
+    public:
+
+    void accept_details()
+    {
+        cout<<"Enter the Employee ID :"<<endl;
+        cin>>eid;
+        cout<<"Enter the Employee name :"<<endl;
+        cin>>emp_name;
+        cout<<"Enter the Employee Basic salary :"<<endl;
+        cin>>basic_salary;
+        
+        
+    }
+    void calculation_details()
+    {
+          da=0.25*basic_salary;
+          hra=800;
+          i_tax=0.15*basic_salary;
+          net_salary=((da+basic_salary+hra)-i_tax);
+    }
+     
+    void display_details()
+    {
+        cout<<"\n-------------------------------";
+        cout<<"\nEmployee id : "<<eid;
+        cout<<"\nEmployee name : "<<emp_name;
+        cout<<"\nBasic salary : "<<basic_salary;
+        cout<<"\nHRA : "<<hra;
+        cout<<"\nDA : "<<da;
+        cout<<"\nTax : "<<i_tax;
+        cout<<"\nNet Salary : "<<net_salary;
+    }
+};
+
+
+int main()
+{
+    //write your code here
+   Employee emp;
+   emp.accept_details();
+   emp.calculation_details();
+   emp.display_details();
+    return 0;
+}
